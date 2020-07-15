@@ -1,0 +1,36 @@
+package com.bj.algo_array;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Bj1546B {
+
+	public static void main(String args[]) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int subCnt = 0;
+		subCnt = Integer.parseInt(br.readLine());
+
+		int subArr[] = new int[subCnt];
+		StringTokenizer subScoreInput = new StringTokenizer(br.readLine());
+		for(int i = 0; i < subCnt; i++) {
+			subArr[i] = Integer.parseInt(subScoreInput.nextToken());
+		}
+
+		br.close();
+
+
+		int maxScore = Arrays.stream(subArr).max().getAsInt();
+		int totScore = Arrays.stream(subArr).sum();
+
+
+		double totAvg = 100.0 * totScore / maxScore / subCnt;
+		System.out.printf("%.2f", totAvg );
+
+
+	}
+
+}
