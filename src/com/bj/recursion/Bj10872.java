@@ -21,6 +21,7 @@ public class Bj10872 {
 			return 1;
 		} else {
 			return calcFacorial(n-1) * n;
+
 		}
 
 	}
